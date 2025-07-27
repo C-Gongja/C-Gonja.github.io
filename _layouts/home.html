@@ -2,7 +2,6 @@
 layout: default
 refactor: true
 ---
-
 {% include lang.html %}
 
 {% assign all_pinned = site.posts | where: 'pin', 'true' %}
@@ -45,6 +44,21 @@ refactor: true
   {% for i in (normal_start..normal_end) %}
     {% assign posts = posts | push: all_normal[i] %}
   {% endfor %}
+{% endif %}
+
+<!-- Intro Block (only show on home) -->
+{% if paginator.page == 1 %}
+  <div class=" p-4">
+    <div class="d-flex flex-column">
+      <p class="h1 mb-3">Welcome to {{ site.title }}!!</p>
+      <p class="h5 mb-1">이 블로그는</p>
+      <p class="h5 mb-0">* Full-stack</p>
+      <p class="h5 mb-0">* CI/CD</p>
+      <p class="h5 mb-0">* basic cs knowledge</p>
+      <p class="h5 mb-0">* leetcode</p>
+      <p class="h5 mt-1">의 개인적인 공부를 기록하는 블로그 입니다.</p>
+    </div>
+  </div>
 {% endif %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
