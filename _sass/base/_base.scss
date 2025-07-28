@@ -359,10 +359,10 @@ main {
 }
 
 .input-focus {
-  box-shadow: none;
+  box-shadow: var(--input-focus-box-shadow);
   border-color: var(--input-focus-border-color) !important;
   background: center !important;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .left {
@@ -408,6 +408,10 @@ mjx-container {
 
 #main-wrapper {
   position: relative;
+
+  @include bp.gte(bp.get(lg)) {
+    margin-top: 2rem;
+  }
 
   @include mx.pl-pr(0);
 

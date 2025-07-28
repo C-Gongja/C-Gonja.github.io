@@ -5,7 +5,15 @@
 
 #topbar-wrapper {
   height: v.$topbar-height;
-  background-color: var(--topbar-bg);
+  background-color: var(--main-bg);
+
+  // 데스크탑에서만 고정 (lg 이상)
+  @include bp.gte(bp.get(lg)) {
+    position: fixed;
+    top: 0;
+    width: 70%; // 또는 기존 width 값
+    z-index: 1000;
+  }
 
   @include bp.lt(bp.get(lg)) {
     @include mx.slide(top 0.2s ease);

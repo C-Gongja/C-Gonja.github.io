@@ -18,6 +18,27 @@
 
   <nav class="flex-column flex-grow-1 w-100 ps-0">
     <ul class="nav">
+      <div class="search-bar">
+        <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
+          <i class="fas fa-search fa-fw"></i>
+        </button>
+
+        <search id="search" class="align-items-center ms-3 ms-lg-0">
+          <i class="fas fa-search fa-fw"></i>
+          <input
+            class="form-control w-100"
+            id="search-input"
+            type="search"
+            aria-label="search"
+            autocomplete="off"
+            placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+          >
+        </search>
+        <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
+          {{- site.data.locales[include.lang].search.cancel -}}
+        </button>
+      </div>
+
       <!-- home -->
       <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
@@ -53,7 +74,7 @@
 
     {% for entry in site.data.contact %}
       {% case entry.type %}
-        {% when 'github', 'twitter' %}
+        {% when 'github' %}
           {%- capture url -%}
             https://{{ entry.type }}.com/{{ site[entry.type].username }}
           {%- endcapture -%}

@@ -30,6 +30,13 @@ $-breakpoints: (
   }
 }
 
+/* Greater than or equal to the given width */
+@mixin gte($width) {
+  @media all and (min-width: $width) {
+    @content;
+  }
+}
+
 @mixin sm {
   @media all and (min-width: get(sm)) {
     @content;
