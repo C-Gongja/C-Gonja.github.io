@@ -43,12 +43,15 @@
   --sidebar-btn-color: #787878;
   --avatar-border-color: rgb(100 108 255 / 50%);
 
+  /* search bar */
+  --input-focus-border-color: rgb(129 133 255 / 60%);
+  --input-focus-box-shadow: 1px 1px 15px -2px rgb(129 133 255 / 100%);
+
   /* Topbar */
   --topbar-bg: rgb(27 27 30 / 64%);
   --topbar-text-color: var(--text-color);
   --search-border-color: rgb(55 55 55);
   --search-icon-color: rgb(100 102 105);
-  --input-focus-border-color: rgb(112 114 115);
 
   /* Home page */
   --post-list-text-color: rgb(175 176 177);

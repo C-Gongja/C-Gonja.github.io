@@ -249,6 +249,16 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
       }
     }
   } /* .sidebar-bottom */
+
+  .search-bar {
+    width: 100%;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 0;
+
+    @include bp.xxxl {
+      padding: 1rem 2.75rem 1.5rem 2.75rem;
+    }
+  }
 } /* #sidebar */
 
 [#{$sidebar-display}] {
@@ -256,5 +266,14 @@ $sidebar-display: 'sidebar-display'; /* the attribute for sidebar display */
     @include bp.lt(bp.get(lg)) {
       transform: translateX(v.$sidebar-width);
     }
+  }
+}
+
+#sidebar-trigger,
+#search-trigger {
+  display: none;
+
+  @include bp.lt(bp.get(lg)) {
+    display: block;
   }
 }
